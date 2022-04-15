@@ -33,5 +33,24 @@ function randomColors(){
 
 }
 
+function gradient(col1, col2, col3, percent){    
+    for (let i = 0; i < 500; i++){   
+        var tempDiv = document.createElement('div'); 
+        tempDiv.style.width = "11.1%";
+        tempDiv.style.float = "left";
+        tempDiv.style.paddingBottom = "11.1%"; 
+        tempDiv.style.opacity = percent;
+        if(i % 2 === 0){
+            tempDiv.style.backgroundColor = col1;            
+        } else {
+            tempDiv.style.backgroundColor = col3;
+        }
+        document.body.appendChild(tempDiv);
+        
+        
+    }
+    document.body.style.backgroundImage = `linear-gradient(90deg, ${col1} 0%, ${col2} 35%, ${col3} 100%)`;    
+}
 //checkers();
-randomColors();
+//randomColors();
+gradient("#ffff00", "#808080", "#000000", "40%");
